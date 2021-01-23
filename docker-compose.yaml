@@ -1,15 +1,12 @@
 version: "3"
-networks:
-  api_server_default:
-    external: true
 services:
   belajar-ts:
-    networks:
-      - api_server_default
+    container_name: belajar-ts
+    restart: unless-stopped
+    volumes:
+        - /usr/src/app/node_modules
     build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      ENV_NAME: dev
+      context: ./
+      dockerfile: ./Dockerfile
     ports:
-      - 7001:7001
+      - 8080:8080
