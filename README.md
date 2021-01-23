@@ -7,5 +7,9 @@ Docker install:
 Non docker:
 - npm run start
 
-Route List:
-- 
+Research
+
+- [x] Express Route
+- [x] Axios API
+- [ ] RabbitMQ
+- [ ] Database MongoDB
