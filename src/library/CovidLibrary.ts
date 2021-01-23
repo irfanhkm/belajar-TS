@@ -15,5 +15,17 @@ export class CovidLibrary {
             .catch(error => {
                 throw error
             });
-    }    
+    }
+    
+    /**
+     * Data Per Provinsi
+     */
+    public async getProvinsi() {
+        return axios
+            .get('https://api.kawalcorona.com/indonesia/provinsi')
+            .then(result => result.data)
+            .catch(error => {
+                throw error
+            });
+    }
 }
