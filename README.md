@@ -6,3 +6,6 @@ Docker install:
 
 Non docker:
 - npm run start
+
+Route List:
+- 

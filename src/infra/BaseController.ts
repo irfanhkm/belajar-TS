@@ -7,10 +7,13 @@ export abstract class BaseController {
     return res.status(code).json({ message })
   }
 
-  public ok<T> (res: express.Response, dto?: T) {
+  public ok<T> (res: express.Response, dto?: T, message = "Response success") {
     if (!!dto) {
       res.type('application/json');
-      return res.status(200).json(dto);
+      return res.status(200).json({
+        message,
+        data: dto
+      });
     } else {
       return res.sendStatus(200);
     }
