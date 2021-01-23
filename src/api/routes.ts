@@ -1,9 +1,9 @@
-import express from "express";
 
-const router = express.Router();
+import { Router } from 'express'
+import { UserController } from "./user/UserController";
+const routes: Router = Router();
+const userController = new UserController();
 
-const controller = require("./controller/controller");
+routes.get('/user', (req, res) => userController.index(req, res));
 
-router.use('/', controller.index);
-
-module.exports = router;
+export { routes }

@@ -1,16 +1,21 @@
 import express from "express";
+import bodyParser from "body-parser";
+import { routes } from "./api/routes";
 
 const app = express();
-const bodyParser = require('body-parser');
 const port = 8080 || process.env.PORT;
-const APIRoutes = require("./api/routes");
+
+function loggerMiddleware(request: express.Request, response: express.Response, next = function() {}) {
+  console.log(`${request.method} ${request.path}`);
+  next();
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
-app.use('/api/', APIRoutes);
+app.use(loggerMiddleware);
+app.use('/', routes);
 
 app.listen(port, () => {
   // tslint:disable-next-line:no-console
