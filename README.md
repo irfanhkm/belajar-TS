@@ -11,5 +11,8 @@ Research
 
 - [x] Express Route
 - [x] Axios API
+- [x] Dockerize
+- [ ] DDD Architecture
+- [ ] Deploy VPS
 - [ ] RabbitMQ
 - [ ] Database MongoDB
