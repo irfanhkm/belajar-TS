@@ -12,7 +12,12 @@ Research
 - [x] Express Route
 - [x] Axios API
 - [x] Dockerize
-- [ ] DDD Architecture
-- [ ] Deploy VPS
+- [ ] Validation Request
+- [ ] Middleware
+- [ ] Caching
+- [ ] Integration Testing
+- [ ] Unit Testing
+- [ ] Functional Testing
+- [ ] Deploy VPS (pm2)
 - [ ] RabbitMQ
-- [ ] Database MongoDB
+- [ ] Database Mysql
