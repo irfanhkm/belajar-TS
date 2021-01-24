@@ -9,20 +9,24 @@ export class CovidLibrary {
      * Data Indonesia
      */
     public async getIndonesia() {
-        return axios
-            .get('https://api.kawalcorona.com/indonesia')
-            .then(result => result.data)
-            .catch(error => {
-                throw error
-            });
+        const url = "https://api.kawalcorona.com/indonesia";
+        return this.axiosGetRequest(url);
     }
     
     /**
      * Data Per Provinsi
      */
     public async getProvinsi() {
+        const url = 'https://api.kawalcorona.com/indonesia/provinsi';
+        return this.axiosGetRequest(url);
+    }
+
+    /**
+     * @param url 
+     */
+    protected async axiosGetRequest(url: string) {
         return axios
-            .get('https://api.kawalcorona.com/indonesia/provinsi')
+            .get(url)
             .then(result => result.data)
             .catch(error => {
                 throw error

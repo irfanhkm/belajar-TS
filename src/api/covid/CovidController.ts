@@ -5,6 +5,11 @@ import { BaseController } from "../../infra/BaseController";
 export class CovidController extends BaseController {
     protected _covidLibrary = new CovidLibrary;
 
+    /**
+     * get list covid in indonesia
+     * @param req 
+     * @param res 
+     */
     public async indonesia(req: express.Request, res: express.Response) {
         try {
           const apiData = await this._covidLibrary.getIndonesia();
@@ -36,9 +41,9 @@ export class CovidController extends BaseController {
      */
     public async covidProvinsi(req: express.Request, res: express.Response) {
         try {
-          const kodeProv = req.params.kode_provinsi;
-          const apiData = await this._covidLibrary.getProvinsi();
-          const provinsiMap = apiData.find((data: any) => data.attributes.Kode_Provi === parseInt(kodeProv, 10));
+          const kodeProv: number = parseInt(req.params.kode_provinsi, 10);
+          const apiData: string[] = await this._covidLibrary.getProvinsi();
+          const provinsiMap = apiData.find((data: any) => data.attributes.Kode_Provi === kodeProv);
           if (provinsiMap) {
             return this.ok<any>(res, provinsiMap);
           }
