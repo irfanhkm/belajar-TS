@@ -7,11 +7,14 @@ Docker install:
 Non docker:
 - npm run start
 
+: visit 8080
+
 Research
 
 - [x] Express Route
 - [x] Axios API
 - [x] Dockerize
+- [ ] DDD
 - [ ] Validation Request
 - [ ] Middleware
 - [ ] Caching
