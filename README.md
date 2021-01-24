@@ -7,7 +7,7 @@ Docker install:
 Non docker:
 - npm run start
 
-: visit 8080
+: visit localhost:8080
 
 Research
 
