@@ -1,7 +1,7 @@
 
 import { Router } from 'express'
-import { UserController } from "./user/UserController";
-import { CovidController } from "./covid/CovidController";
+import { UserController } from "./controller/user/UserController";
+import { CovidController } from "./controller/covid/CovidController";
 
 const routes: Router = Router();
 const userController = new UserController();

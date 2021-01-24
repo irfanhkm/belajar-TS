@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { routes } from "./api/routes";
+import { routes } from "./routes";
 
 const app = express();
 const port = 8080 || process.env.PORT;
